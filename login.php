@@ -1,3 +1,24 @@
+<?php
+    if(isset($_POST['submit'])){
+
+        $email = htmlentities($_POST['email']);
+        $password = htmlentities($_POST['password']);
+
+        if($email != null && $password != null){
+            
+        //Check that user-entered email and PW match what's in the DB
+
+        //header('./index.php');
+
+        }
+        else{
+
+        }
+
+    }
+    else{
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,21 +44,27 @@
 
             <h2>Login</h2>
 
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
-            </div>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" placeholder="email@example.com" name="email" required>
+                </div>
 
-            <div class="form-group">
-                <label for="exampleInputEmail1">Password</label>
-                <input type="text" class="form-control" aria-describedby="emailHelp" name="password">
-            </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input type="text" class="form-control" name="password" required>
+                </div>
 
-            <input type="submit" value="Login" class="btn btn-primary" name="submit">
+                <input type="submit" value="Login" class="btn btn-primary" name="submit">
+            </form>
 
         </div>
     </div>
 </div>
+
+<?php
+    }
+?>
     
 </body>
 </html>
