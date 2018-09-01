@@ -16,6 +16,28 @@
 <!-- Navbar -->
 <?php include './includes/navbar_logged_out.php'; ?>
 <!-- End Navbar -->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 mt-3">
+
+            <h2>Login</h2>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" name="password">
+            </div>
+
+            <input type="submit" value="Login" class="btn btn-primary" name="submit">
+
+        </div>
+    </div>
+</div>
     
 </body>
 </html>
