@@ -4,17 +4,6 @@
         $email = htmlentities($_POST['email']);
         $password = htmlentities($_POST['password']);
 
-        if($email != null && $password != null){
-            
-        //Check that user-entered email and PW match what's in the DB
-
-        //header('./index.php');
-
-        }
-        else{
-
-        }
-
     }
     else{
 ?>
