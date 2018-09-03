@@ -25,7 +25,7 @@
 
             }
         } else {
-            $errorMessage = "Please check your username and password and try again.";
+            $errorMessage = "Invalid credentials! Please check your username and password and try again.";
             include './includes/login_form.php';
         }
 

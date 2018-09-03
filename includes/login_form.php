@@ -22,7 +22,11 @@
         <div class="col-lg-4 mt-3">
 
             <h2>Login</h2>
-            <?php echo $errorMessage; ?>
+            <?php 
+                if($errorMessage){
+                    echo "<div class='alert alert-danger'>".$errorMessage."</div>"; 
+                }
+            ?>
             <form action="#" method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
