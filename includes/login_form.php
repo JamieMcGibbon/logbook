@@ -39,6 +39,10 @@
                 </div>
 
                 <input type="submit" value="Login" class="btn btn-primary" name="submit">
+
+                <br /><br />
+                <div class="register_message">Don't have an account? No problem! You can register for one <a href="./register.php">here!</a></div>
+
             </form>
 
         </div>
