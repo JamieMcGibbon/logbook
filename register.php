@@ -12,12 +12,12 @@
         $firstName = htmlentities($_POST['firstName']);
         $lastName = htmlentities($_POST['lastName']);
         $email = htmlentities($_POST['email']);
-        $password = htmlentities($_POST['password']);    
-        $confirm_password = htmlentities($_POST['confirmPassword']);
+        $password = sha1(htmlentities($_POST['password']));    
+        $confirm_password = sha1(htmlentities($_POST['confirmPassword']));
 
         //Check that the user has filled in all fields
         if(($firstName != null) && ($lastName != null) && ($email != null) && ($password != null) && ($confirm_password != null)){
-
+            
             //Check that user data doesn't already exist in database
             $sql = "SELECT email FROM users WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
@@ -34,10 +34,32 @@
             }
             else{
 
-                //User doesn't yet exist in DB. Enter their details into the "users" table of the "logbook" DB
-                
-                //Send the user to the logged in dashboard
-                header('Location: ./dashboard/index.php');
+                //Check that $password and $confirm_password match
+                if($password == $confirm_password){
+
+                    //User doesn't yet exist in DB. Enter their details into the "users" table of the "logbook" DB
+                    $sql = "INSERT INTO users (firstName, lastName, email, password) VALUES ('$firstName', '$lastName', '$email', '$password')";
+ 
+                    if (mysqli_query($conn, $sql)) {
+                        $errorMessage = "";
+                    } else {
+                        $errorMessage = "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        include './includes/registration_form.php';
+                    }
+                    
+                    mysqli_close($conn);
+                    //Send the user to the logged in dashboard
+                    header('Location: ./dashboard/index.php');
+
+                }
+                else{
+                    
+                    //Show error message and registration form
+                    $errorMessage = "Please ensure that your passwords match and try again.";
+                    include './includes/registration_form.php';
+                }
+
+
 
             }
 
