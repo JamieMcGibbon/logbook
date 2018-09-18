@@ -32,16 +32,16 @@
                 <form>
                     <div class="form-group">
                         <label>Date:</label>
-                        <input type="date" class="form-control" name="date">
+                        <input type="date" class="form-control" name="date" required>
                     </div>
 
                     <div class="form-group">
                         <label>Aircraft:</label>
-                        <input type="text" class="form-control" name="aircraft" placeholder="ex. Piper PA-28-161">
+                        <input type="text" class="form-control" name="aircraft" placeholder="ex. Piper PA-28-161" required>
                     </div>
                     <div class="form-group">
                         <label>To/From:</label>
-                        <input type="text" class="form-control" name="aircraft" placeholder="ex. KBOS to KBOS">
+                        <input type="text" class="form-control" name="toFrom" placeholder="ex. KBOS to KBOS" required>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
@@ -63,13 +63,13 @@
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Instrument:</label>
-                                <input type="text" class="form-control" name="hours_day">
+                                <input type="text" class="form-control" name="hours_instrument">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Simulated Instrument:</label>
-                                <input type="text" class="form-control" name="hours_night">
+                                <input type="text" class="form-control" name="hours_sim_instrument">
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Type:</label>
-                        <select class="form-control" id="type">
+                        <select class="form-control" id="type" name="timeType">
                             <option>PIC</option>
                             <option>SIC</option>
                             <option>Dual</option>
@@ -91,7 +91,7 @@
                         <input type="text" class="form-control" name="notes">
                     </div>
 
-                    <button class="btn btn-primary form_margin">Add Flight</button>
+                    <button class="btn btn-primary form_margin" name="submit">Add Flight</button>
 
                 </form>
             </div>
@@ -101,6 +101,31 @@
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
     <!-- /Footer -->
+
+    <?php
+
+        //Check that the user has filled in the necessary fields. If not, display error message.
+        $error_message = null;
+
+        //Get user-submitted form data
+
+        $date = $_POST['date'];
+        $aircraft = $_POST['aircraft'];
+        $destination = $_POST['toFrom'];;
+        $hours_day = $_POST['hours_day'];
+        $hours_night = $_POST['hours_night'];
+        $hours_instrument = $_POST['hours_instrument'];
+        $hours_sim_instrument = $_POST['hours_sim_instrument'];
+        $time_type = $_POST['timeType'];;
+        $notes = $_POST['notes'];
+        $submit = $_POST['submit'];
+
+        //Check that necessary form fields were filled out with the correct values.
+        if(is_numeric($hours_day) && is_numeric($hours_night) && is_numeric($hours_instrument) && is_numeric($hours_sim_instrument)){
+            $error_message = "Please check that you have entered the hours as numeric values and try again.";
+        }
+
+    ?>
 
 </body>
 </html>
