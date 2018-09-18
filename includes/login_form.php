@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="text" class="form-control" name="password" required>
+                    <label for="exampleInputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" required>
                 </div>
 
                 <input type="submit" value="Login" class="btn btn-primary" name="submit">

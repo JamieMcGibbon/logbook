@@ -22,6 +22,10 @@
                 if(($row['email'] == $email) && ($row['password'] == $password)){
                     header('Location: ./dashboard/index.php');
                 }
+                else{
+                    $errorMessage = "Invalid credentials! Please check your username and password and try again.";
+                    include './includes/login_form.php';
+                }
 
             }
         } else {
