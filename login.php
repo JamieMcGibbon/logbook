@@ -20,7 +20,15 @@
             while($row = mysqli_fetch_assoc($result)) {
                 
                 if(($row['email'] == $email) && ($row['password'] == $password)){
+
+                    //Send user to the logged in dashboard
                     header('Location: ./dashboard/index.php');
+
+                    //Start PHP session
+                    session_start();
+
+                    //Set session variable to the user's ID
+                    $_SESSION['user_id'] = $row['id'];
                 }
                 else{
                     $errorMessage = "Invalid credentials! Please check your username and password and try again.";
