@@ -11,9 +11,9 @@ body{
     margin-bottom: 60px;
 }
 
-.home-text{
+/* .home-text{
 
-}
+} */
 
 .page_heading{
     margin-top: 10px;
@@ -49,15 +49,22 @@ body{
     overflow-x: hidden
 }
 
+.footer_spacing{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    margin-top: 60px;
+}
+
 /* Logbook Dashboard Styles */
 
 .table_test{
     width: 100%;
 }
 
-.edit_link{
+/* .edit_link{
 
-}
+} */
 
 /* Profile Page Styles */
 
