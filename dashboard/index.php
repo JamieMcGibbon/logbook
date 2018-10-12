@@ -7,7 +7,7 @@ if(!isset($_SESSION['user_id'])){
 
   //If user isn't logged in, redirect them back to the site homepage
   header('Location: ../index.php');
-  
+
 }
 
 ?>
