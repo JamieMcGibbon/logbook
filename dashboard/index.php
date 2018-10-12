@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php 
+
+session_start(); 
+
+//Check that a user is logged in (session variable is set)
+if(!isset($_SESSION['user_id'])){
+
+  //If user isn't logged in, redirect them back to the site homepage
+  header('Location: ../index.php');
+  
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
