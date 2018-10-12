@@ -1,5 +1,12 @@
 <?php
 
+    //Check if user is already logged in, if yes then redirect back to user dashboard
+    session_start();
+
+    if(isset($_SESSION['user_id'])){
+        header('Location: ./dashboard/index.php');
+    }  
+
     //Include PHP MySQL DB connection file
     include './includes/connection.php';
 
