@@ -29,7 +29,7 @@
             ?>
             <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1">Email Address</label>
                     <input type="email" class="form-control" placeholder="email@example.com" name="email" required>
                 </div>
 
