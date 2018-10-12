@@ -24,7 +24,7 @@
           <!-- Right Side of Navbar -->
           <ul class="navbar-nav my-2 my-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" href="../logout.php">Logout</a>
             </li>
           </ul>
           <!-- /Right Side of Navbar -->
