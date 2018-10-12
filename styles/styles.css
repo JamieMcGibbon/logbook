@@ -49,12 +49,13 @@ body{
     overflow-x: hidden
 }
 
-.footer_spacing{
+/* Look into why this isn't working on the main homepage */
+/* .footer_spacing{
     height: 100px;
     width: 100%;
     background-color: black;
     margin-top: 60px;
-}
+} */
 
 /* Logbook Dashboard Styles */
 
