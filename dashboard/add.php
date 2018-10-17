@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //Check that a user is logged in (session variable is set)
 if(!isset($_SESSION['user_id'])){
 
