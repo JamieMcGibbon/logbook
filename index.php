@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +19,24 @@
 <body>
 
   <!-- Navigation Bar -->
-    <?php include './includes/navbar_logged_out.php'; ?>
+    <?php 
+    
+    //Check to see if user is logged in
+    if(!isset($_SESSION['user_id'])){
+
+      //If no, display "logged out" nav bar
+      include './includes/navbar_logged_out.php';
+
+    }
+    else{
+
+      //If yes, display "logged in" nav bar (homepage version)
+      include './includes/homepage_navbar_logged-in.php';
+      
+    }
+    
+    ?>
+
   <!-- / Navigation Bar -->
 
   <!-- <img src="http://via.placeholder.com/1200x300" class="img-responsive"> -->
