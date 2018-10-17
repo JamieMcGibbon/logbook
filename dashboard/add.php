@@ -1,5 +1,13 @@
 <?php
 
+//Check that a user is logged in (session variable is set)
+if(!isset($_SESSION['user_id'])){
+
+    //If user isn't logged in, redirect them back to the site homepage
+    header('Location: ../index.php');
+  
+}
+
 //Check that the user has filled in the necessary fields. If not, display error message.
 $error_message = null;
 
