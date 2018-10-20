@@ -20,6 +20,8 @@
 
     <div class="container">
 
+    <?php echo $error_message; ?>
+
         <!-- Row 1 (Outside) -->
         <div class="row justify-content-lg-center">
             <div class="col-lg-6">

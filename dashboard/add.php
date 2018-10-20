@@ -17,6 +17,9 @@ $error_message = null;
 
 if(isset($_POST['submit'])){
 
+    //Get user ID (from session variable)
+    $user_id = $_SESSION['user_id'];
+
     //Get user-submitted form data
     $date = htmlentities($_POST['date']);
     $aircraft = htmlentities($_POST['aircraft']);
@@ -29,13 +32,35 @@ if(isset($_POST['submit'])){
     $notes = htmlentities($_POST['notes']);
     $submit = htmlentities($_POST['submit']);
 
-    //Check that necessary form fields were filled out with the correct values.
-    if(is_numeric($hours_day) && is_numeric($hours_night) && is_numeric($hours_instrument) && is_numeric($hours_sim_instrument)){
+    //Check that necessary form fields were filled out with the correct values. (NEEDS EDITING/REFACTORING)
+    if( is_int($hours_day)/*is_numeric($hours_day) && is_numeric($hours_night) && is_numeric($hours_instrument) && is_numeric($hours_sim_instrument) */){
         $error_message = "Please check that you have entered the hours as numeric values and try again.";
         include '../includes/add_form.php';
     }
-    else{ //Check to see if this "else" statement is needed.
+    else{ //Insert data into the "entries" table of the DB
+
+        //Include PHP MySQL DB connection file
+        include '../includes/connection.php';
+
+        //SQL statement to insert data into the "entries" table of the DB
+        $sql = "INSERT INTO entries (user_id, date, aircraft, destination, hours_day, hours_night, hours_instrument, hours_sim_instrument, time_type, notes) 
+                VALUES ('$user_id', '$date', '$aircraft', '$destination', '$hours_day', '$hours_night', '$hours_instrument',
+                        '$hours_sim_instrument', '$time_type', '$notes')";
+
+        //Insert the data into the "entries" table of the database
+        if (mysqli_query($conn, $sql)) {
+            $error_message = "Flight Successfully Added!";
+            include '../includes/add_form.php';
+        } else {
+            $error_message = "Error: " . $sql . "<br>" . mysqli_error($conn);
+            include '../includes/add_form.php';
+        }           
+
+        //After successful submission, display the "../includes/add_form.php" form again with a success note at the top
+        
+        
         include '../includes/add_form.php';
+        
     }
 }
 else{ 
