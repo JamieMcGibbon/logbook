@@ -16,7 +16,7 @@
     if(isset($_POST['submit'])){
 
         $email = htmlentities($_POST['email']);
-        $password = htmlentities($_POST['password']);
+        $password = sha1(htmlentities($_POST['password']));
 
         $sql = "SELECT id, email, password FROM users WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);

@@ -52,6 +52,60 @@ if(!isset($_SESSION['user_id'])){
         <a href="./progress/index.php" role="button" class="btn btn-primary"><i class="fas fa-tasks"></i> View Progress</a>
         <br />
         <br />
+
+        <?php
+
+          //Include MySQL connection file
+          include '../includes/connection.php';
+
+          //Store user ID in variable to make MySQL queries cleaner
+          $user_id = $_SESSION['user_id'];
+
+          //Query the "entries" table of the "logbook" database for user entries
+          $sql = "SELECT * FROM entries WHERE user_id = '$user_id'";
+          $result = mysqli_query($conn, $sql);
+
+          if(mysqli_num_rows($result) > 0){
+
+            //User has logbook entries in the "entries" table of the DB
+            while($row = mysqli_fetch_assoc($result)) {
+
+              for($i = 0; $i <= mysqli_num_rows($result); $i++){
+                echo $row['user_id']." - ".$row['date']." - ".$row['hours_day']." - ".$row['notes'];
+                echo "<br />";
+              }
+
+            }
+
+          }
+          else{ //User has no entries
+            ?> //End PHP and display empty table
+
+            <b>Total Flights:</b> 25 | <b>Total Hours:</b> 30.5
+            <br /> <br />
+
+            <div class="table-responsive">
+              <table class="table table-responsive table_test">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Aircraft</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Instrument</th>
+                    <th scope="col">Notes</th>
+                    <th scope="col"> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+
+            <?php //Start PHP again
+          }
+
+        ?>
+
         <b>Total Flights:</b> 25 | <b>Total Hours:</b> 30.5
         <br /> <br />
 
