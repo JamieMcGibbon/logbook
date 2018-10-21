@@ -91,7 +91,7 @@ if(!isset($_SESSION['user_id'])){
                 <tbody>
 
                 <?php //Start PHP again
-                  for($i = 0; $i <= mysqli_num_rows($result) - 1; $i++){
+                  foreach($result as $row){
                 ?>
                   <tr>
                     <th scope="row"><a href="#"><?php echo $row['date']; ?></a></th>
