@@ -70,10 +70,46 @@ if(!isset($_SESSION['user_id'])){
             //User has logbook entries in the "entries" table of the DB
             while($row = mysqli_fetch_assoc($result)) {
 
-              for($i = 0; $i <= mysqli_num_rows($result); $i++){
-                echo $row['user_id']." - ".$row['date']." - ".$row['hours_day']." - ".$row['notes'];
-                echo "<br />";
-              }
+              echo "<b>Total Flights:</b> ".mysqli_num_rows($result); //" | <b>Total Hours:</b> 30.5"; (ADD IN LATER)
+              echo "<br /> <br />";
+
+              ?> <!-- End PHP to display start of HTML table -->
+
+              <div class="table-responsive">
+              <table class="table table-responsive table_test">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Aircraft</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Instrument</th>
+                    <th scope="col">Notes</th>
+                    <th scope="col"> </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                <?php //Start PHP again
+                  for($i = 0; $i <= mysqli_num_rows($result) - 1; $i++){
+                ?>
+                  <tr>
+                    <th scope="row"><a href="#"><?php echo $row['date']; ?></a></th>
+                    <td><?php echo $row['aircraft']; ?></td>
+                    <td><?php echo $row['hours_day']; ?></td>
+                    <td><?php echo $row['time_type']; ?></td>
+                    <td><center><?php echo $row['hours_instrument']; ?></center></td>
+                    <td><?php echo $row['notes']; ?></td>
+                    <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
+                  </tr>
+                <?php
+                  }
+                ?>
+                </tbody>
+                </table>
+                <center><button type="button" class="btn btn-primary">Load More</button></center>
+            <?php
+              
 
             }
 
@@ -81,7 +117,7 @@ if(!isset($_SESSION['user_id'])){
           else{ //User has no entries
             ?> <!-- End PHP and display empty table -->
 
-            <b>Total Flights:</b> 25 | <b>Total Hours:</b> 30.5
+            <b>Total Flights:</b> 0 | <b>Total Hours:</b> 0
             <br /> <br />
 
             <div class="table-responsive">
@@ -106,83 +142,7 @@ if(!isset($_SESSION['user_id'])){
 
         ?>
 
-        <b>Total Flights:</b> 25 | <b>Total Hours:</b> 30.5
-        <br /> <br />
 
-        <div class="table-responsive">
-          <table class="table table-responsive table_test">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Aircraft</th>
-                <th scope="col">Hours</th>
-                <th scope="col">Type</th>
-                <th scope="col">Instrument</th>
-                <th scope="col">Notes</th>
-                <th scope="col"> </th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <tr>
-                <th scope="row"><a href="#">7/19/2018</a></th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-
-              <tr>
-                <th scope="row">7/18/2018</th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-              <tr>
-                <th scope="row">7/17/2018</th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-              <tr>
-                <th scope="row">7/16/2018</th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-              <tr>
-                <th scope="row">7/15/2018</th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-              <tr>
-                <th scope="row">7/14/2018</th>
-                <td>PA 28-161</td>
-                <td>1.2</td>
-                <td>Dual</td>
-                <td><center>0.0</center></td>
-                <td>Touch & Gos, towered field, steep turns, power on stalls, power off stalls, no-flap landings</td>
-                <td><a href="#" class="edit_link"><i class="fas fa-pen-square"></i> Edit</a></td>
-              </tr>
-            </tbody>
-          </table>
-
-        <center><button type="button" class="btn btn-primary">Load More</button></center>
     </div>
   </div>
 </div>
