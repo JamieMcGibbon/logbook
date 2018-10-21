@@ -79,7 +79,7 @@ if(!isset($_SESSION['user_id'])){
 
           }
           else{ //User has no entries
-            ?> //End PHP and display empty table
+            ?> <!-- End PHP and display empty table -->
 
             <b>Total Flights:</b> 25 | <b>Total Hours:</b> 30.5
             <br /> <br />
