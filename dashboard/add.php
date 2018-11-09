@@ -26,6 +26,8 @@ if(isset($_POST['submit'])){
     $destination = htmlentities($_POST['toFrom']);;
     $hours_day = htmlentities($_POST['hours_day']);
     $hours_night = htmlentities($_POST['hours_night']);
+    $landings_day = htmlentities($_POST['landings_day']);
+    $landings_night = htmlentities($_POST['landings_night']);
     $hours_instrument = htmlentities($_POST['hours_instrument']);
     $hours_sim_instrument = htmlentities($_POST['hours_sim_instrument']);
     $time_type = htmlentities($_POST['timeType']);

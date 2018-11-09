@@ -65,13 +65,13 @@
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Landings (Day):</label>
-                                <input type="number" class="form-control" name="hours_day">
+                                <input type="number" class="form-control" name="landings_day">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Landings (Night):</label>
-                                <input type="number" class="form-control" name="hours_night">
+                                <input type="number" class="form-control" name="landings_night">
                             </div>
                         </div>
                     </div>

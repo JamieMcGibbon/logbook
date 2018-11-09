@@ -76,13 +76,16 @@ if(!isset($_SESSION['user_id'])){
               ?> <!-- End PHP to display start of HTML table -->
 
               <div class="table-responsive">
-              <table class="table table-responsive table_test">
+              <table class="table table-responsive table_test" style="font-size: 12px;">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">Date</th>
                     <th scope="col">Aircraft</th>
-                    <th scope="col">Hours</th>
+                    <th scope="col">Hours (Day)</th>
+                    <th scope="col">Hours (Night)</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Landings (Day)</th>
+                    <th scope="col">Landings (Night)</th>
                     <th scope="col">Instrument</th>
                     <th scope="col">Notes</th>
                     <th scope="col"> </th>
@@ -97,7 +100,10 @@ if(!isset($_SESSION['user_id'])){
                     <th scope="row"><a href="#"><?php echo $row['date']; ?></a></th>
                     <td><?php echo $row['aircraft']; ?></td>
                     <td><?php echo $row['hours_day']; ?></td>
+                    <td><?php echo $row['hours_night']; ?></td>
                     <td><?php echo $row['time_type']; ?></td>
+                    <td><?php echo $row['landings_day']; ?></td>
+                    <td><?php echo $row['landings_night']; ?></td>
                     <td><center><?php echo $row['hours_instrument']; ?></center></td>
                     <td><?php echo $row['notes']; ?></td>
                     <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
