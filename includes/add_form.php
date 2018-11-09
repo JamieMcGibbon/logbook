@@ -48,19 +48,36 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
-                                <label>Day:</label>
+                                <label>Time (Day):</label>
                                 <input type="number" class="form-control" name="hours_day">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
-                                <label>Night:</label>
+                                <label>Time (Night):</label>
                                 <input type="number" class="form-control" name="hours_night">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Row 2  -->
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Landings (Day):</label>
+                                <input type="number" class="form-control" name="hours_day">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Landings (Night):</label>
+                                <input type="number" class="form-control" name="hours_night">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Row 2 -->
+
+                    <!-- Row 3  -->
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
@@ -75,11 +92,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /Row 2 -->
+                    <!-- /Row 3 -->
 
 
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Type:</label>
+                        <label for="exampleFormControlSelect1">Type Logged:</label>
                         <select class="form-control" id="type" name="timeType">
                             <option>PIC</option>
                             <option>SIC</option>
