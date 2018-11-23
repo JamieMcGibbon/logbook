@@ -59,8 +59,10 @@
                     }
                     
                     mysqli_close($conn);
-                    //Send the user to the logged in dashboard
-                    header('Location: ./dashboard/index.php');
+                    //Create and set session variable (TO-DO) to log user in                  
+
+                    //Send the user to the log in page
+                    header('Location: ./login.php');
 
                 }
                 else{
