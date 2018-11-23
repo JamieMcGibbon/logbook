@@ -69,6 +69,39 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="epasswordRecoveryQuestion1">Password Recovery Question #1:</label>
+                    <select class="form-control" id="passwordRecoveryQuestion1">
+                    <option>What is your mother's maiden name?</option>
+                    <option>What was the name of your first elementary school?</option>
+                    <option>What year did you start flying?</option>
+                    <option>What was the year of your first solo?</option>
+                    <option>What is your father's middle name?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordRecoveryAnswer1">Answer:</label>
+                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecovery1">
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordRecoveryQuestion2">Password Recovery Question #2:</label>
+                    <select class="form-control" id="passwordRecoveryQuestion2">
+                    <option>What is your mother's maiden name?</option>
+                    <option>What was the name of your first elementary school?</option>
+                    <option>What year did you start flying?</option>
+                    <option>What was the year of your first solo?</option>
+                    <option>What is your father's middle name?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordRecoveryAnswer2">Answer:</label>
+                    <input type="text" class="form-control" aria-describedby="epasswordRecoveryQuestion2" name="passwordRecovery2">
+                </div>
+                
                 <input type="submit" value="Register" class="btn btn-primary" name="submit">
                 <br /><br />
                 Already have an account? <a href="./login.php">Click here</a> to login.
