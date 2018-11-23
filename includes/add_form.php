@@ -48,13 +48,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
-                                <label>Time (Day):</label>
+                                <label>Hours (Day):</label>
                                 <input type="number" class="form-control" name="hours_day">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
-                                <label>Time (Night):</label>
+                                <label>Hours (Night):</label>
                                 <input type="number" class="form-control" name="hours_night">
                             </div>
                         </div>
