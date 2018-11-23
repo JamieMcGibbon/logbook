@@ -31,14 +31,21 @@
 
 
             <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">First Name</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp" name="firstName">
-                </div>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Last Name</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp" name="lastName">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">First Name</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="firstName">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Last Name</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="lastName">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -47,16 +54,21 @@
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp" name="password">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="password">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="confirmPassword">
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Confirm Password</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp" name="confirmPassword">
-                </div>
-
                 <input type="submit" value="Register" class="btn btn-primary" name="submit">
                 <br /><br />
                 Already have an account? <a href="./login.php">Click here</a> to login.
