@@ -98,8 +98,8 @@ if(!isset($_SESSION['user_id'])){
                   foreach($result as $row){
                 ?>
                   <tr>
-                    <th scope="row"><a href="#"><?php echo $row['date']; ?></a></th>
-                    <td><center><?php echo $row['aircraft']; ?></center></td>
+                    <th scope="row" style="width: 150px;"><a href="#"><?php echo date('F j, Y',strtotime($row['date'])); ?></a></th>
+                    <td style="width: 100px;"><center><?php echo $row['aircraft']; ?></center></td>
                     <td><center><?php echo $row['hours_day']; ?></center></td>
                     <td><center><?php echo $row['hours_night']; ?></center></td>
                     <td><center><?php echo $row['time_type']; ?></center></td>
@@ -108,7 +108,7 @@ if(!isset($_SESSION['user_id'])){
                     <td><center><?php echo $row['hours_sim_instrument']; ?></center></td>
                     <td><center><?php echo $row['hours_instrument']; ?></center></td>
                     <td><?php echo $row['notes']; ?></td>
-                    <td><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
+                    <td style="width: 75px;"><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a></td>
                   </tr>
                 <?php
                   }
