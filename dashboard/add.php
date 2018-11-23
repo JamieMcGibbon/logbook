@@ -57,11 +57,6 @@ if(isset($_POST['submit'])){
             $error_message = "Error: " . $sql . "<br>" . mysqli_error($conn);
             include '../includes/add_form.php';
         }           
-
-        //After successful submission, display the "../includes/add_form.php" form again with a success note at the top
-        
-        
-        include '../includes/add_form.php';
         
     }
 }
