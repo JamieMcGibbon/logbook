@@ -21,6 +21,10 @@
         $email = htmlentities($_POST['email']);
         $password = sha1(htmlentities($_POST['password']));    
         $confirm_password = sha1(htmlentities($_POST['confirmPassword']));
+        $recovery_question_1 = htmlentities($_POST['passwordRecoveryQuestion1']);
+        $recovery_answer_1 = htmlentities($_POST['passwordRecovery1']);
+        $recovery_question_2 = htmlentities($_POST['passwordRecoveryQuestion2']);
+        $recovery_answer_2 = htmlentities($_POST['passwordRecovery2']);
 
         //Check that the user has filled in all fields
         if(($firstName != null) && ($lastName != null) && ($email != null) && ($password != null) && ($confirm_password != null)){
@@ -45,7 +49,7 @@
                 if($password == $confirm_password){
 
                     //User doesn't yet exist in DB. Enter their details into the "users" table of the "logbook" DB
-                    $sql = "INSERT INTO users (firstName, lastName, email, password) VALUES ('$firstName', '$lastName', '$email', '$password')";
+                    $sql = "INSERT INTO users (firstName, lastName, email, password, passwordRecoveryQuestion1, passwordRecoveryAnswer1, passwordRecoveryQuestion2, passwordRecoveryAnswer2) VALUES ('$firstName', '$lastName', '$email', '$password', '$recovery_question_1', '$recovery_answer_1', '$recovery_question_2', '$recovery_answer_2')";
  
                     if (mysqli_query($conn, $sql)) {
                         $errorMessage = "";
