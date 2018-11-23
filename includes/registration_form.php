@@ -32,6 +32,7 @@
 
             <form action="#" method="POST">
 
+                <!-- Name Section -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
@@ -47,13 +48,17 @@
                         </div>
                     </div>
                 </div>
+                <!-- /Name Section -->
 
+                <!-- Email Address -->
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email Address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com" name="email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
+                <!-- /Email Address -->
 
+                <!-- Password Section -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
@@ -69,7 +74,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- /Password Section -->
 
+                <!-- Password Recovery Questions Section -->
                 <div class="form-group">
                     <label for="passwordRecoveryQuestion1">Password Recovery Question #1:</label>
                     <select class="form-control" id="passwordRecoveryQuestion1" name="passwordRecoveryQuestion1">
@@ -101,8 +108,12 @@
                     <label for="passwordRecoveryAnswer2">Answer:</label>
                     <input type="text" class="form-control" aria-describedby="epasswordRecoveryQuestion2" name="passwordRecovery2">
                 </div>
+                <!-- /Password Recovery Questions Section -->
                 
+                <!-- Submit Button -->
                 <input type="submit" value="Register" class="btn btn-primary" name="submit">
+                <!-- /Submit Button -->
+                
                 <br /><br />
                 Already have an account? <a href="./login.php">Click here</a> to login.
             </form>
