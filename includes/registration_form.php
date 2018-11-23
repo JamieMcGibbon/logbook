@@ -58,14 +58,14 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" name="password">
+                            <input type="password" class="form-control" aria-describedby="password" name="password">
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Confirm Password</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" name="confirmPassword">
+                            <input type="password" class="form-control" aria-describedby="confirmPassword" name="confirmPassword">
                         </div>
                     </div>
                 </div>
