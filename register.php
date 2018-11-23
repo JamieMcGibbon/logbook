@@ -22,9 +22,9 @@
         $password = sha1(htmlentities($_POST['password']));    
         $confirm_password = sha1(htmlentities($_POST['confirmPassword']));
         $recovery_question_1 = htmlentities($_POST['passwordRecoveryQuestion1']);
-        $recovery_answer_1 = htmlentities($_POST['passwordRecovery1']);
+        $recovery_answer_1 = sha1(htmlentities($_POST['passwordRecovery1']));
         $recovery_question_2 = htmlentities($_POST['passwordRecoveryQuestion2']);
-        $recovery_answer_2 = htmlentities($_POST['passwordRecovery2']);
+        $recovery_answer_2 = sha1(htmlentities($_POST['passwordRecovery2']));
 
         //Check that the user has filled in all fields
         if(($firstName != null) && ($lastName != null) && ($email != null) && ($password != null) && ($confirm_password != null)){
