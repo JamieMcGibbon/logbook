@@ -21,9 +21,9 @@
         $email = htmlentities($_POST['email']);
         $password = sha1(htmlentities($_POST['password']));    
         $confirm_password = sha1(htmlentities($_POST['confirmPassword']));
-        $recovery_question_1 = htmlentities($_POST['passwordRecoveryQuestion1']);
+        $recovery_question_1 = mysqli_real_escape_string($conn, $_POST['passwordRecoveryQuestion1']);
         $recovery_answer_1 = sha1(htmlentities($_POST['passwordRecovery1']));
-        $recovery_question_2 = htmlentities($_POST['passwordRecoveryQuestion2']);
+        $recovery_question_2 = mysqli_real_escape_string($conn, $_POST['passwordRecoveryQuestion2']);
         $recovery_answer_2 = sha1(htmlentities($_POST['passwordRecovery2']));
 
         //Check that the user has filled in all fields
