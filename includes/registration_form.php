@@ -22,8 +22,7 @@
         <div class="col-lg-6 mt-3">
 
             <h2>Register</h2>
-            <br />
-            
+
              <?php 
                 if($errorMessage){
                     echo "<div class='alert alert-danger'>".$errorMessage."</div>"; 
@@ -76,9 +75,9 @@
                     </div>
                 </div>
                 <!-- /Password Section -->
-
-                <br />
-                <h3>Password Recovery Questions:</h3>
+                
+                <h4>Password Recovery Questions:</h4>
+                
 
                 <!-- Password Recovery Questions Section -->
                 <div class="form-group">
