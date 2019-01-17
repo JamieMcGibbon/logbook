@@ -81,22 +81,22 @@
 
                 <!-- Password Recovery Questions Section -->
                 <div class="form-group">
-                    <label for="passwordRecoveryQuestion1">Password Recovery Question #1:</label>
+                    <label for="passwordRecoveryQuestion1">Password Recovery Question #1:*</label>
                     <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecoveryQuestion1" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="passwordRecoveryAnswer1">Answer:</label>
+                    <label for="passwordRecoveryAnswer1">Answer:*</label>
                     <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecovery1" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="passwordRecoveryQuestion2">Password Recovery Question #2:</label>
+                    <label for="passwordRecoveryQuestion2">Password Recovery Question #2:*</label>
                     <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion2" name="passwordRecoveryQuestion2" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="passwordRecoveryAnswer2">Answer:</label>
+                    <label for="passwordRecoveryAnswer2">Answer:*</label>
                     <input type="text" class="form-control" aria-describedby="epasswordRecoveryQuestion2" name="passwordRecovery2" required>
                 </div>
                 <!-- /Password Recovery Questions Section -->
