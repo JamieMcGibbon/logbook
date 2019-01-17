@@ -36,15 +36,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">First Name</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" name="firstName">
+                            <label for="exampleInputEmail1">First Name*</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="firstName" required>
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Last Name</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" name="lastName">
+                            <label for="exampleInputEmail1">Last Name*</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp" name="lastName" required>
                         </div>
                     </div>
                 </div>
@@ -52,8 +52,8 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email Address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com" name="email">
+                    <label for="exampleInputEmail1">Email Address*</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com" name="email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <!-- /Email Address -->
@@ -62,15 +62,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>
-                            <input type="password" class="form-control" aria-describedby="password" name="password">
+                            <label for="exampleInputEmail1">Password*</label>
+                            <input type="password" class="form-control" aria-describedby="password" name="password" required>
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Confirm Password</label>
-                            <input type="password" class="form-control" aria-describedby="confirmPassword" name="confirmPassword">
+                            <label for="exampleInputEmail1">Confirm Password*</label>
+                            <input type="password" class="form-control" aria-describedby="confirmPassword" name="confirmPassword" required>
                         </div>
                     </div>
                 </div>
@@ -82,22 +82,22 @@
                 <!-- Password Recovery Questions Section -->
                 <div class="form-group">
                     <label for="passwordRecoveryQuestion1">Password Recovery Question #1:</label>
-                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecoveryQuestion1">
+                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecoveryQuestion1" required>
                 </div>
 
                 <div class="form-group">
                     <label for="passwordRecoveryAnswer1">Answer:</label>
-                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecovery1">
+                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion1" name="passwordRecovery1" required>
                 </div>
 
                 <div class="form-group">
                     <label for="passwordRecoveryQuestion2">Password Recovery Question #2:</label>
-                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion2" name="passwordRecoveryQuestion2">
+                    <input type="text" class="form-control" aria-describedby="passwordRecoveryQuestion2" name="passwordRecoveryQuestion2" required>
                 </div>
 
                 <div class="form-group">
                     <label for="passwordRecoveryAnswer2">Answer:</label>
-                    <input type="text" class="form-control" aria-describedby="epasswordRecoveryQuestion2" name="passwordRecovery2">
+                    <input type="text" class="form-control" aria-describedby="epasswordRecoveryQuestion2" name="passwordRecovery2" required>
                 </div>
                 <!-- /Password Recovery Questions Section -->
                 
