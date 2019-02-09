@@ -59,12 +59,34 @@ if(!isset($_SESSION['user_id'])){
           $sql = "SELECT * FROM entries WHERE user_id = '$user_id'";
           $result = mysqli_query($conn, $sql);
 
+          //Queries to get total hours (both day and night) that the user has flown
+
+          $total_day = "";
+          $total_night = "";
+
+          $sql_total_hours_day = "SELECT SUM('hours_day') as total_day FROM entries";
+          $hours_day_result = mysqli_query($conn, $sql_total_hours_day);
+
+          while($hours_day = mysqli_fetch_assoc($hours_day_result)){
+            $total_day = $hours_day['total_day'];
+          }
+
+          $sql_total_hours_night = "SELECT SUM('hours_night') as total_night FROM entries";
+          $hours_night_result = mysqli_query($conn, $sql_total_hours_night);
+
+          while($hours_night = mysqli_fetch_assoc($hours_night_result)){
+            $total_night = $hours_night['total_night'];
+          }
+
+          $total_hours = $total_day + $total_night;
+
+
           if(mysqli_num_rows($result) > 0){
 
             //User has logbook entries in the "entries" table of the DB
             while($row = mysqli_fetch_assoc($result)) {
 
-              echo "<b>Total Flights:</b> ".mysqli_num_rows($result); //" | <b>Total Hours:</b> 30.5"; (ADD IN LATER)
+              echo "<b>Total Flights:</b> ".mysqli_num_rows($result)." | <b>Total Hours:</b> ".$total_hours;
               echo "<br /> <br />";
 
               ?> <!-- End PHP to display start of HTML table -->
