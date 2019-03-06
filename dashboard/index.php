@@ -59,27 +59,19 @@ if(!isset($_SESSION['user_id'])){
           $sql = "SELECT * FROM entries WHERE user_id = '$user_id'";
           $result = mysqli_query($conn, $sql);
 
-          //Queries to get total hours (both day and night) that the user has flown
+          //Queries to get total hours (both day and night) that the user has flown (separate from query above that continues below)
 
-          $total_day = "";
-          $total_night = "";
+          $hours_query = "SELECT (SUM(hours_day)+SUM(hours_night)) as 'sum' FROM entries WHERE user_id = '$user_id'";
+          $hours_result = mysqli_query($conn, $hours_query);
 
-          $sql_total_hours_day = "SELECT SUM('hours_day') as total_day FROM entries";
-          $hours_day_result = mysqli_query($conn, $sql_total_hours_day);
+          $total_hours = "";
 
-          while($hours_day = mysqli_fetch_assoc($hours_day_result)){
-            $total_day = $hours_day['total_day'];
+          while($row = mysqli_fetch_assoc($hours_result)){
+            $total_hours = $row['sum'];
           }
 
-          $sql_total_hours_night = "SELECT SUM('hours_night') as total_night FROM entries";
-          $hours_night_result = mysqli_query($conn, $sql_total_hours_night);
-
-          while($hours_night = mysqli_fetch_assoc($hours_night_result)){
-            $total_night = $hours_night['total_night'];
-          }
-
-          $total_hours = $total_day + $total_night;
-
+          //End Hours Query
+          
 
           if(mysqli_num_rows($result) > 0){
 
