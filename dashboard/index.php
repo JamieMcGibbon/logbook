@@ -56,7 +56,7 @@ if(!isset($_SESSION['user_id'])){
           $user_id = $_SESSION['user_id'];
 
           //Query the "entries" table of the "logbook" database for user entries
-          $sql = "SELECT * FROM entries WHERE user_id = '$user_id'";
+          $sql = "SELECT * FROM entries WHERE user_id = '$user_id' ORDER BY date desc";
           $result = mysqli_query($conn, $sql);
 
           //Queries to get total hours (both day and night) that the user has flown (separate from query above that continues below)
