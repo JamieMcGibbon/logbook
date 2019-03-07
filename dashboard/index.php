@@ -87,16 +87,16 @@ if(!isset($_SESSION['user_id'])){
               <table class="table table-responsive table-striped table-bordered table_test" style="font-size: 12px;">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Aircraft</th>
-                    <th scope="col">Hours (Day)</th>
-                    <th scope="col">Hours (Night)</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Landings (Day)</th>
-                    <th scope="col">Landings (Night)</th>
-                    <th scope="col">Instrument</th>
-                    <th scope="col">Simulated Instrument</th>
-                    <th scope="col">Notes</th>
+                    <th scope="col"><center>Date</center></th> <!-- Remove <center></center> tags and replace with CSS rules -->
+                    <th scope="col"><center>Aircraft<center></th>
+                    <th scope="col"><center>Hours (Day)<center></th>
+                    <th scope="col"><center>Hours (Night)<center></th>
+                    <th scope="col"><center>Type<center></th>
+                    <th scope="col"><center>Landings (Day)<center></th>
+                    <th scope="col"><center>Landings (Night)<center></th>
+                    <th scope="col"><center>Instrument<center></th>
+                    <th scope="col"><center>Simulated Instrument<center></th>
+                    <th scope="col"><center>Notes<center></th>
                     <th scope="col"> </th>
                   </tr>
                 </thead>
