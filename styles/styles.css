@@ -63,6 +63,10 @@ body{
     width: 100%;
 }
 
+.edit_link{
+    text-decoration: none;
+}
+
 /* .edit_link{
 
 } */
