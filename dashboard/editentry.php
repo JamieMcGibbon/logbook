@@ -13,7 +13,27 @@ if(!isset($_SESSION['user_id'])){
 //Get the ID of the logbook entry that the user would like to edit and store in $entryId variable
 $entryId = $_GET['id'];
 
+//Session variable (user_id)
+$userId = $_SESSION['user_id'];
+
+//Include MySQL connection file
+include '../includes/connection.php';
+
 //Check that the user ID of the user that's currently logged in matches the user ID associated with the logbook entry being edited
+
+//Query the "entries" table of the "logbook" database for the entry taken from the "id" parameter of the URL
+$sql = "SELECT * FROM entries WHERE entry_id = '$entryId'";
+$result = mysqli_query($conn, $sql);
+
+while($row = mysqli_fetch_assoc($result)){
+
+  //Check that the entry being edited belongs to the user trying to edit it (compare user ID stored in session to that
+  //associated with the entry in the database. If they don't match, redirect the user back to the logbook dashboard.
+  if($userId != $row['user_id']){
+    header('Location: ./index.php');
+  }
+
+}
 
 ?>
 
