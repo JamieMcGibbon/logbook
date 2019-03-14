@@ -56,6 +56,106 @@ while($row = mysqli_fetch_assoc($result)){
   <?php include '../includes/navbar_logged_in.php' ?>
   <!-- / Navigation Bar -->
 
+  <div class="container">
+
+    <!-- Row 1 (Outside) -->
+    <div class="row justify-content-lg-center">
+        <div class="col-lg-6">
+            
+            <div class="page_heading">
+                <h3>Edit a Flight</h3>
+            </div>
+
+
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Aircraft:</label>
+                    <input type="text" class="form-control" name="aircraft" placeholder="ex. Piper PA-28-161" required>
+                </div>
+                <div class="form-group">
+                    <label>To/From:</label>
+                    <input type="text" class="form-control" name="toFrom" placeholder="ex. KBOS to KBOS" required>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Hours (Day):</label>
+                            <input type="number" class="form-control" name="hours_day">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Hours (Night):</label>
+                            <input type="number" class="form-control" name="hours_night">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Landings (Day):</label>
+                            <input type="number" class="form-control" name="landings_day">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Landings (Night):</label>
+                            <input type="number" class="form-control" name="landings_night">
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row 2 -->
+
+                <!-- Row 3  -->
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Instrument:</label>
+                            <input type="number" class="form-control" name="hours_instrument">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Simulated Instrument:</label>
+                            <input type="number" class="form-control" name="hours_sim_instrument">
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row 3 -->
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Type Logged:</label>
+                    <select class="form-control" id="type" name="timeType">
+                        <option>PIC</option>
+                        <option>SIC</option>
+                        <option>Dual</option>
+                        <option>Instructor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Notes:</label>
+                    <input type="text" class="form-control" name="notes">
+                </div>
+
+                <input type="submit" class="btn btn-primary form_margin" name="submit" value="Edit Flight">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<?php include '../includes/footer.php'; ?>
+<!-- /Footer -->
 
 
 
