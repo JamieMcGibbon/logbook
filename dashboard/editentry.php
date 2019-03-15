@@ -25,6 +25,10 @@ include '../includes/connection.php';
 $sql = "SELECT * FROM entries WHERE entry_id = '$entryId'";
 $result = mysqli_query($conn, $sql);
 
+$date = $aircraft = $hours_day = $hours_night = $time_type = $landings_day = $landings_night = $sim_instrument =
+$instrument = $entry_id = "";
+
+
 while($row = mysqli_fetch_assoc($result)){
 
   //Check that the entry being edited belongs to the user trying to edit it (compare user ID stored in session to that
@@ -32,6 +36,17 @@ while($row = mysqli_fetch_assoc($result)){
   if($userId != $row['user_id']){
     header('Location: ./index.php');
   }
+
+    $date = date('F j, Y',strtotime($row['date'])); 
+    $aircraft = $row['aircraft'];
+    $hours_day = $row['hours_day']; 
+    $hours_night = $row['hours_night']; 
+    $time_type = $row['time_type']; 
+    $landings_day = $row['landings_day']; 
+    $landings_night = $row['landings_night']; 
+    $sim_instrument = $row['hours_sim_instrument']; 
+    $instrument = $row['hours_instrument']; 
+    $entry_id = $row['entry_id'];
 
 }
 
@@ -75,7 +90,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <div class="form-group">
                     <label>Aircraft:</label>
-                    <input type="text" class="form-control" name="aircraft" placeholder="ex. Piper PA-28-161" required>
+                    <input type="text" class="form-control" name="aircraft" value="<?php echo $aircraft; ?>" required>
                 </div>
                 <div class="form-group">
                     <label>To/From:</label>
