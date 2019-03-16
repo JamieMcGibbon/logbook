@@ -39,6 +39,7 @@ while($row = mysqli_fetch_assoc($result)){
 
     $date = date('F j, Y',strtotime($row['date'])); 
     $aircraft = $row['aircraft'];
+    $destination = $row['destination'];
     $hours_day = $row['hours_day']; 
     $hours_night = $row['hours_night']; 
     $time_type = $row['time_type']; 
@@ -46,6 +47,7 @@ while($row = mysqli_fetch_assoc($result)){
     $landings_night = $row['landings_night']; 
     $sim_instrument = $row['hours_sim_instrument']; 
     $instrument = $row['hours_instrument']; 
+    $notes = $row['notes'];
     $entry_id = $row['entry_id'];
 
 }
@@ -85,7 +87,7 @@ while($row = mysqli_fetch_assoc($result)){
             <form action="" method="POST">
                 <div class="form-group">
                     <label>Date:</label>
-                    <input type="date" class="form-control" name="date" required>
+                    <input type="date" class="form-control" name="date" value="<?php echo $date; ?>" required>
                 </div>
 
                 <div class="form-group">
@@ -94,19 +96,19 @@ while($row = mysqli_fetch_assoc($result)){
                 </div>
                 <div class="form-group">
                     <label>To/From:</label>
-                    <input type="text" class="form-control" name="toFrom" placeholder="ex. KBOS to KBOS" required>
+                    <input type="text" class="form-control" name="toFrom" value="<?php echo $destination; ?>" required>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Hours (Day):</label>
-                            <input type="number" class="form-control" name="hours_day">
+                            <input type="number" class="form-control" value="<?php echo $hours_day; ?>"  name="hours_day">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Hours (Night):</label>
-                            <input type="number" class="form-control" name="hours_night">
+                            <input type="number" class="form-control" value="<?php echo $hours_night; ?>" name="hours_night">
                         </div>
                     </div>
                 </div>
@@ -116,13 +118,13 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Landings (Day):</label>
-                            <input type="number" class="form-control" name="landings_day">
+                            <input type="number" class="form-control" value="<?php echo $landings_day; ?>" name="landings_day">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Landings (Night):</label>
-                            <input type="number" class="form-control" name="landings_night">
+                            <input type="number" class="form-control" value="<?php echo $landings_night; ?>" name="landings_night">
                         </div>
                     </div>
                 </div>
@@ -133,13 +135,13 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Instrument:</label>
-                            <input type="number" class="form-control" name="hours_instrument">
+                            <input type="number" class="form-control" value="<?php echo $instrument; ?>" name="hours_instrument">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Simulated Instrument:</label>
-                            <input type="number" class="form-control" name="hours_sim_instrument">
+                            <input type="number" class="form-control" value="<?php echo $sim_instrument; ?>" name="hours_sim_instrument">
                         </div>
                     </div>
                 </div>
@@ -148,7 +150,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Type Logged:</label>
-                    <select class="form-control" id="type" name="timeType">
+                    <select class="form-control" id="type" value="<?php echo $time_type; ?>" name="timeType">
                         <option>PIC</option>
                         <option>SIC</option>
                         <option>Dual</option>
@@ -158,7 +160,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <div class="form-group">
                     <label>Notes:</label>
-                    <input type="text" class="form-control" name="notes">
+                    <input type="text" class="form-control" value="<?php echo $notes; ?>" name="notes">
                 </div>
 
                 <input type="submit" class="btn btn-primary form_margin" name="submit" value="Edit Flight">
