@@ -150,7 +150,8 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Type Logged:</label>
-                    <select class="form-control" id="type" value="<?php echo $time_type; ?>" name="timeType">
+                    <select class="form-control" id="type" name="timeType">
+                        <option><?php echo $time_type; ?></option> <!-- Add logic so the option being returned from the DB isn't shown twice -->
                         <option>PIC</option>
                         <option>SIC</option>
                         <option>Dual</option>
