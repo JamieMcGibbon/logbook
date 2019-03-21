@@ -37,7 +37,7 @@ while($row = mysqli_fetch_assoc($result)){
     header('Location: ./index.php');
   }
 
-    $date = date('F j, Y',strtotime($row['date'])); 
+    $date = date('Y-m-d' ,strtotime($row['date'])); 
     $aircraft = $row['aircraft'];
     $destination = $row['destination'];
     $hours_day = $row['hours_day']; 
