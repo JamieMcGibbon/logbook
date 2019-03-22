@@ -19,6 +19,46 @@ $userId = $_SESSION['user_id'];
 //Include MySQL connection file
 include '../includes/connection.php';
 
+//Code to process the edited logbook entry
+if(isset($_POST['submit'])){
+
+    //Get user-submitted form data
+    $date = htmlentities($_POST['date']);
+    $aircraft = htmlentities($_POST['aircraft']);
+    $destination = htmlentities($_POST['toFrom']);;
+    $hours_day = htmlentities($_POST['hours_day']);
+    $hours_night = htmlentities($_POST['hours_night']);
+    $landings_day = htmlentities($_POST['landings_day']);
+    $landings_night = htmlentities($_POST['landings_night']);
+    $hours_instrument = htmlentities($_POST['hours_instrument']);
+    $hours_sim_instrument = htmlentities($_POST['hours_sim_instrument']);
+    $time_type = htmlentities($_POST['timeType']);
+    $notes = htmlentities($_POST['notes']);
+    $submit = htmlentities($_POST['submit']);
+
+    //Check that necessary form fields were filled out with the correct values. (NEEDS EDITING/REFACTORING)
+    if(is_int($hours_day)/*is_numeric($hours_day) && is_numeric($hours_night) && is_numeric($hours_instrument) && is_numeric($hours_sim_instrument) */){
+        $error_message = "Please check that you have entered the hours as numeric values and try again.";
+    }
+    else{ 
+
+        //Insert data into the "entries" table of the DB
+
+        //SQL statement to insert data into the "entries" table of the DB
+        $sql = "UPDATE entries SET user_id='$userId', date='$date', aircraft='$aircraft', destination='$destination', hours_day='$hours_day', hours_night='$hours_night', hours_instrument='$hours_instrument', hours_sim_instrument='$hours_sim_instrument', time_type='$time_type', notes='$notes' 
+                WHERE entry_id='$entryId'";
+
+        //Update the entry data in the "entries" table of the database
+        if (mysqli_query($conn, $sql)) {
+            $error_message = "Flight Successfully Added!";
+        } else {
+            $error_message = "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }           
+
+    }
+    
+}
+
 //Check that the user ID of the user that's currently logged in matches the user ID associated with the logbook entry being edited
 
 //Query the "entries" table of the "logbook" database for the entry taken from the "id" parameter of the URL
@@ -72,6 +112,8 @@ while($row = mysqli_fetch_assoc($result)){
   <!-- Navigation Bar -->
   <?php include '../includes/navbar_logged_in.php' ?>
   <!-- / Navigation Bar -->
+
+  <?php echo $error_message; ?>
 
   <div class="container">
 
