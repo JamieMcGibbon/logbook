@@ -19,6 +19,9 @@ $userId = $_SESSION['user_id'];
 //Include MySQL connection file
 include '../includes/connection.php';
 
+//Error message variable
+$error_message = "";
+
 //Code to process the edited logbook entry
 if(isset($_POST['submit'])){
 
@@ -113,7 +116,7 @@ while($row = mysqli_fetch_assoc($result)){
   <?php include '../includes/navbar_logged_in.php' ?>
   <!-- / Navigation Bar -->
 
-  <?php echo $error_message; ?>
+  <?php if($error_message != ""){ echo $error_message; } ?>
 
   <div class="container">
 
