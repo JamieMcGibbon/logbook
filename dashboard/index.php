@@ -116,7 +116,7 @@ if(!isset($_SESSION['user_id'])){
                     <td><center><?php echo $row['hours_sim_instrument']; ?></center></td>
                     <td><center><?php echo $row['hours_instrument']; ?></center></td>
                     <td><?php echo $row['notes']; ?><?php $flightId = $row['entry_id']; ?></td>
-                    <td style="width: 125px;"><a href="./editentry.php?id=<?php echo $flightId; ?>" style="text-decoration: none;"><i class="fas fa-pen-square"></i> Edit</a> | <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" style="text-decoration: none;"><i class="far fa-trash-alt"></i> Delete</a></td>
+                    <td style="width: 125px;"><a href="./editentry.php?id=<?php echo $flightId; ?>" style="text-decoration: none;"><i class="fas fa-pen-square"></i> Edit</a> | <a href="./delete.php?id=<?php echo $flightId; ?>" style="text-decoration: none;"><i class="far fa-trash-alt"></i> Delete</a></td>
                     <!-- <td style="width: 125px;"><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-pen-square"></i> Edit</a> | <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="far fa-trash-alt"></i> Delete</a></td> -->
                   </tr>
                 <?php
