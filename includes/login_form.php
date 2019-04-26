@@ -41,7 +41,7 @@
                 <input type="submit" value="Login" class="btn btn-primary" name="submit">
 
                 <br /><br />
-                <div class="register_message">Don't have an account? No problem! You can register for a free account <a href="./register.php">here!</a> <br /><br />Forgot password? <a href="#">Click here</a> to reset it!</div>
+                <div class="register_message">Don't have an account? No problem! You can register for a free account <a href="./register.php">here!</a> <br /><br />Forgot password? <a href="./reset.php">Click here</a> to reset it!</div>
 
             </form>
 
