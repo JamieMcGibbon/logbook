@@ -30,6 +30,27 @@ session_start();
 
     <!-- Main Container -->
     <div class="container">
+
+      <div class="row justify-content-center">
+          <div class="col-lg-4 mt-3">
+
+            <h2>Reset Your Password</h2>
+
+            <p>Please enter your email address to begin the password reset process.</p>
+
+              <form action="#" method="POST">
+                  <div class="form-group">
+                      <label for="recoveryEmail">Enter Email Address</label>
+                      <input type="email" class="form-control" placeholder="email@example.com" name="recoveryEmail" required>
+                  </div>
+
+                  <input type="submit" value="Submit" class="btn btn-primary" name="submit">
+
+              </form>
+
+          </div>
+      </div>
+
     </div>
     <!-- / Main Container -->
 
