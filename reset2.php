@@ -2,7 +2,39 @@
 
 session_start(); 
 
-///////// UPDATE THIS TO INCLUDE SESSION FOR USER'S EMAIL ADDRESS ////////////
+if(!isset($_POST['recoveryEmail'])){
+    header("Location: ./index.php");
+}
+else{
+    
+    //Recovery email address is set - check that the email address exists in the "users" table of the DB
+    
+    //Include PHP MySQL DB connection file
+    include './includes/connection.php';
+
+    //Store user's recovery email address in the "$email_address" variable
+    $email_address = $_POST['recoveryEmail'];
+
+    //Query the DB to see if an account with the user-entered recovery email address exists
+    $sql = "SELECT id, email FROM users WHERE email = '$email_address";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        //Account exists in "users" table with the user-entered recovery email address
+        while($row = mysqli_fetch_assoc($result)) {
+            
+
+        }
+    } else {
+
+        
+    }
+
+
+
+}
+
 
 
 ?>
@@ -36,17 +68,7 @@ session_start();
 
             <h2>Reset Your Password</h2>
 
-            <p>Please enter your email address to begin the password reset process.</p>
-
-              <form action="./reset2.php" method="POST">
-                  <div class="form-group">
-                      <label for="recoveryEmail">Email Address</label>
-                      <input type="email" class="form-control" placeholder="email@example.com" name="recoveryEmail" required>
-                  </div>
-
-                  <input type="submit" value="Submit" class="btn btn-primary" name="submit">
-
-              </form>
+            
 
           </div>
       </div>
