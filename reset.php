@@ -2,9 +2,6 @@
 
 session_start(); 
 
-if(!isset($_SESSION['recovery_email'])){
-  header("Location: ./index.php");
-}
 
 ?>
 
