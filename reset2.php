@@ -16,7 +16,7 @@ else{
     $email_address = $_POST['recoveryEmail'];
 
     //Query the DB to see if an account with the user-entered recovery email address exists
-    $sql = "SELECT id, email FROM users WHERE email = '$email_address";
+    $sql = "SELECT id, email FROM users WHERE email = '$email_address'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -24,6 +24,9 @@ else{
         //Account exists in "users" table with the user-entered recovery email address
         while($row = mysqli_fetch_assoc($result)) {
             
+            //Display user's recovery questions and a form to submit the answers.
+            //Form will have to submit to another recovery page that will enable the user to
+            //reset their password.
 
         }
     } else {
