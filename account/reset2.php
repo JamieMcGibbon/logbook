@@ -3,14 +3,14 @@
 session_start(); 
 
 if(!isset($_POST['recoveryEmail'])){
-    header("Location: ./index.php");
+    header("Location: ../index.php");
 }
 else{
     
     //Recovery email address is set - check that the email address exists in the "users" table of the DB
     
     //Include PHP MySQL DB connection file
-    include './includes/connection.php';
+    include '../includes/connection.php';
 
     //Store user's recovery email address in the "$email_address" variable
     $email_address = $_POST['recoveryEmail'];
