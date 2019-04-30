@@ -117,7 +117,7 @@ else{
                     <input type="text" class="form-control" name="passwordRecoveryAnswer2" required>
                 </div>
 
-                <input type="hidden" id="emailAddress" name="emailAddress">
+                <input type="hidden" id="emailAddress" name="emailAddress" value="<?php echo $email_address; ?>">
 
                 <input type="submit" value="Submit" class="btn btn-primary" name="submit">
 

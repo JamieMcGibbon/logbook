@@ -3,6 +3,10 @@
 session_start(); 
 
 $message = "";
+$db_answer_1 = "";
+$db_answer_2 = "";
+$recoveryAnswer1 = "";
+$recoveryAnswer2 = "";
 
 if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
     header("Location: ../index.php");
