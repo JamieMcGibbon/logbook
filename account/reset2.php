@@ -16,7 +16,7 @@ else{
     $email_address = $_POST['recoveryEmail'];
 
     //Query the DB to see if an account with the user-entered recovery email address exists
-    $sql = "SELECT id, email FROM users WHERE email = '$email_address'";
+    $sql = "SELECT * FROM users WHERE email = '$email_address'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -27,6 +27,9 @@ else{
             //Display user's recovery questions and a form to submit the answers.
             //Form will have to submit to another recovery page that will enable the user to
             //reset their password.
+
+            $recovery_question_1 = $row['passwordRecoveryQuestion1'];
+            $recovery_question_2 = $row['passwordRecoveryQuestion2'];
 
         }
     } else {
@@ -101,7 +104,22 @@ else{
           <div class="col-lg-4 mt-3">
 
             <h2>Reset Your Password</h2>
+            <p>In order to reset your account password, please answer your recovery questions below.</p>
 
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="passwordRecoveryQuestion1"><?php echo $recovery_question_1; ?></label>
+                    <input type="text" class="form-control" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="passwordRecoveryQuestion2"><?php echo $recovery_question_2; ?></label>
+                    <input type="text" class="form-control" name="email" required>
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-primary" name="submit">
+
+            </form>
             
 
           </div>
