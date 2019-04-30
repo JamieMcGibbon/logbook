@@ -2,20 +2,24 @@
 
 session_start(); 
 
-if(!isset($_POST['recoveryEmail'])){
+$message = "";
+
+if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
     header("Location: ../index.php");
 }
 else{
     
-    //Recovery email address is set - check that the email address exists in the "users" table of the DB
+    //Recovery email address has been provided and recoveyr questions have been answered
+    //Check that the user has correctly answered the password recovery questions.
     
     //Include PHP MySQL DB connection file
     include '../includes/connection.php';
 
-    //Store user's recovery email address in the "$email_address" variable
-    $email_address = $_POST['recoveryEmail'];
+    $email_address = htmlentities($_POST['emailAddress']);
+    $recoveryAnswer1 = sha1(htmlentities($_POST['passwordRecoveryAnswer1']));
+    $recoveryAnswer2 = sha1(htmlentities($_POST['passwordRecoveryAnswer2']));
 
-    //Query the DB to see if an account with the user-entered recovery email address exists
+    //Query the DB to see if the user-answered password recovery questions were correctly answered
     $sql = "SELECT * FROM users WHERE email = '$email_address'";
     $result = mysqli_query($conn, $sql);
 
@@ -24,12 +28,17 @@ else{
         //Account exists in "users" table with the user-entered recovery email address
         while($row = mysqli_fetch_assoc($result)) {
             
-            //Display user's recovery questions and a form to submit the answers.
-            //Form will have to submit to another recovery page that will enable the user to
-            //reset their password.
+            //Check that the user's recovery question answers match the answers that are the DB for their account
 
-            $recovery_question_1 = $row['passwordRecoveryQuestion1'];
-            $recovery_question_2 = $row['passwordRecoveryQuestion2'];
+            //DB recovery answers
+            $db_answer_1 = $row['passwordRecoveryAnswer1'];
+            $db_answer_2 = $row['passwordRecoveryAnswer2'];
+
+            if(($recoveryAnswer1 == $db_answer_1) && ($recoveryAnswer2 == $db_answer_2)){
+
+                $message = "Correct!";
+
+            }
 
         }
     } else {
@@ -104,25 +113,18 @@ else{
           <div class="col-lg-4 mt-3">
 
             <h2>Reset Your Password</h2>
-            <p>In order to reset your account password, please answer your recovery questions below.</p>
 
-            <form action="./reset3.php" method="POST">
-                <div class="form-group">
-                    <label for="passwordRecoveryQuestion1"><?php echo $recovery_question_1; ?></label>
-                    <input type="text" class="form-control" name="passwordRecoveryAnswer1" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="passwordRecoveryQuestion2"><?php echo $recovery_question_2; ?></label>
-                    <input type="text" class="form-control" name="passwordRecoveryAnswer2" required>
-                </div>
+            <?php
+            echo $db_answer_1;
+            echo "<br />";
+            echo $recoveryAnswer1;
+            echo "<br />";
+            echo $db_answer_2;
+            echo "<br />";
+            echo $recoveryAnswer2;
+            ?>
 
-                <input type="hidden" id="emailAddress" name="emailAddress">
-
-                <input type="submit" value="Submit" class="btn btn-primary" name="submit">
-
-            </form>
-            
+            <?php echo $message; ?>
 
           </div>
       </div>
