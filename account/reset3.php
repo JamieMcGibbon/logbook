@@ -40,7 +40,23 @@ else{
 
             if(($recoveryAnswer1 == $db_answer_1) && ($recoveryAnswer2 == $db_answer_2)){
 
-                $message = "Correct!";
+              //Show form for user to enter new password
+              $message =
+
+              '
+              <form action="" method="POST">
+                <div class="form-group">
+                    <label for="passwordResetField">Enter new password:</label>
+                    <input type="text" class="form-control" name="newPassword" required>
+                </div>
+
+                <input type="hidden" id="emailAddress" name="emailAddress" value="">
+
+                <input type="submit" value="Submit" class="btn btn-primary" name="submit">
+
+              </form>
+              ';
+              
 
             }
 
@@ -117,16 +133,6 @@ else{
           <div class="col-lg-4 mt-3">
 
             <h2>Reset Your Password</h2>
-
-            <?php
-            echo $db_answer_1;
-            echo "<br />";
-            echo $recoveryAnswer1;
-            echo "<br />";
-            echo $db_answer_2;
-            echo "<br />";
-            echo $recoveryAnswer2;
-            ?>
 
             <?php echo $message; ?>
 
