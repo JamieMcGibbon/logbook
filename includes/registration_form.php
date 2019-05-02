@@ -36,14 +36,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">First Name*</label>
+                            <label for="exampleInputEmail1">First Name:*</label>
                             <input type="text" class="form-control" aria-describedby="emailHelp" name="firstName" required>
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Last Name*</label>
+                            <label for="exampleInputEmail1">Last Name:*</label>
                             <input type="text" class="form-control" aria-describedby="emailHelp" name="lastName" required>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email Address*</label>
+                    <label for="exampleInputEmail1">Email Address:*</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com" name="email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
@@ -62,14 +62,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password*</label>
+                            <label for="exampleInputEmail1">Password:*</label>
                             <input type="password" class="form-control" aria-describedby="password" name="password" required>
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Confirm Password*</label>
+                            <label for="exampleInputEmail1">Confirm Password:*</label>
                             <input type="password" class="form-control" aria-describedby="confirmPassword" name="confirmPassword" required>
                         </div>
                     </div>
