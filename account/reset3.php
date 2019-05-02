@@ -45,9 +45,15 @@ else{
 
               '
               <form action="" method="POST">
+
                 <div class="form-group">
-                    <label for="passwordResetField">Enter new password:</label>
-                    <input type="text" class="form-control" name="newPassword" required>
+                  <label for="passwordResetField">Enter new password:</label>
+                  <input type="password" class="form-control" name="newPassword" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="passwordResetField">Confirm new password:</label>
+                  <input type="password" class="form-control" name="newPasswordConfirmation" required>
                 </div>
 
                 <input type="hidden" id="emailAddress" name="emailAddress" value="">
