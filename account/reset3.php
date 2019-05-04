@@ -65,6 +65,10 @@ else{
               
 
             }
+            else{
+              $message = "Please check that the answers to your recovery questions were correctly entered and try again.
+                          <br /><br /><a href='./reset.php'>Click here to try again</a>.";
+            }
 
         }
     } else {
