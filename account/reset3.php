@@ -7,9 +7,36 @@ $db_answer_1 = "";
 $db_answer_2 = "";
 $recoveryAnswer1 = "";
 $recoveryAnswer2 = "";
+$email_address = $_POST['emailAddress'];
 
 if(isset($_POST['newPassword']) && isset($_POST['newPasswordConfirmation'])){
   //User has created a new password and submitted it using the form on this page
+
+  $newPassword = $_POST['newPassword'];
+  $newPasswordConfirmation = $_POST['newPasswordConfirmation'];
+
+  if($newPassword == $newPasswordConfirmation){
+    //New password and password confirmation match; update user's password record in the DB
+
+    //Include MySQL connection file
+    include '../includes/connection.php';
+
+    $newPasswordHash = sha1($newPassword);
+
+    //SQL statement to insert data into the "users" table of the DB
+    $sql = "UPDATE users SET password='$newPasswordHash' WHERE email='$email_address'";
+
+    //Update the entry data in the "entries" table of the database
+    if (mysqli_query($conn, $sql)) {
+        $message= "Password successfully reset! <br /><br /> <a href='../login.php'>Click here</a> to return to the <a href='../login.php'>login</a> page!";
+    } else {
+        $message = "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+
+  }
+
+
   
 }
 else if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
@@ -61,7 +88,7 @@ else{
                   <input type="password" class="form-control" name="newPasswordConfirmation" required>
                 </div>
 
-                <input type="hidden" id="emailAddress" name="emailAddress" value="">
+                <input type="hidden" id="emailAddress" name="emailAddress" value="'.$email_address.'">
 
                 <input type="submit" value="Submit" class="btn btn-primary" name="submit">
 
