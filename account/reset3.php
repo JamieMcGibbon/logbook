@@ -11,6 +11,18 @@ $recoveryAnswer2 = "";
 if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
     header("Location: ../index.php");
 }
+else if(isset($_POST['newPassword']) && isset($_POST['newPasswordConfirmation'])){
+
+  //User has created and submitted a new password
+
+  $newPassword = $_POST['newPassword'];
+  $newPasswordConfirmation = $_POST['newPasswordConfirmation'];
+
+  echo $newPassword;
+
+  $message = "test";
+
+}
 else{
     
     //Recovery email address has been provided and recoveyr questions have been answered
