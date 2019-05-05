@@ -8,20 +8,13 @@ $db_answer_2 = "";
 $recoveryAnswer1 = "";
 $recoveryAnswer2 = "";
 
-if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
-    header("Location: ../index.php");
+if(isset($_POST['newPassword']) && isset($_POST['newPasswordConfirmation'])){
+  //User has created a new password and submitted it using the form on this page
+  
 }
-else if(isset($_POST['newPassword']) && isset($_POST['newPasswordConfirmation'])){
-
-  //User has created and submitted a new password
-
-  $newPassword = $_POST['newPassword'];
-  $newPasswordConfirmation = $_POST['newPasswordConfirmation'];
-
-  echo $newPassword;
-
-  $message = "test";
-
+else if(!isset($_POST['passwordRecoveryAnswer1']) || !isset($_POST['passwordRecoveryAnswer2'])){
+    //User has tried to access this page without answering their recovery questions on the previous page
+    header("Location: ../index.php");
 }
 else{
     
