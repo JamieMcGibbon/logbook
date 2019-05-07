@@ -35,6 +35,10 @@ if(isset($_POST['newPassword']) && isset($_POST['newPasswordConfirmation'])){
 
 
   }
+  else{
+    //The new password and confirmation password that the user entered don't match.
+    $message = "Please <a href='./reset.php'>go back</a> and check that your new password and confirmation password match.";
+  }
 
 
   
