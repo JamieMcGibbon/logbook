@@ -2,6 +2,8 @@
 
 session_start(); 
 
+$message = "";
+
 if(!isset($_POST['recoveryEmail'])){
     header("Location: ../index.php");
 }
@@ -31,8 +33,32 @@ else{
             $recovery_question_1 = $row['passwordRecoveryQuestion1'];
             $recovery_question_2 = $row['passwordRecoveryQuestion2'];
 
+            $message = 
+            '
+            <p>In order to reset your account password, please answer your recovery questions below.</p>
+
+            <form action="./reset3.php" method="POST">
+                <div class="form-group">
+                    <label for="passwordRecoveryQuestion1">'.$recovery_question_1.'</label>
+                    <input type="text" class="form-control" name="passwordRecoveryAnswer1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="passwordRecoveryQuestion2">'.$recovery_question_2.'</label>
+                    <input type="text" class="form-control" name="passwordRecoveryAnswer2" required>
+                </div>
+
+                <input type="hidden" id="emailAddress" name="emailAddress" value="'.$email_address.'">
+
+                <input type="submit" value="Submit" class="btn btn-primary" name="submit">
+
+            </form>
+            ';
+
         }
     } else {
+
+      $message = "No account exists using that email address. Please <a href='./reset.php'>go back</a> and try again!";
 
         
     }
@@ -104,25 +130,8 @@ else{
           <div class="col-lg-4 mt-3">
 
             <h2>Reset Your Password</h2>
-            <p>In order to reset your account password, please answer your recovery questions below.</p>
 
-            <form action="./reset3.php" method="POST">
-                <div class="form-group">
-                    <label for="passwordRecoveryQuestion1"><?php echo $recovery_question_1; ?></label>
-                    <input type="text" class="form-control" name="passwordRecoveryAnswer1" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="passwordRecoveryQuestion2"><?php echo $recovery_question_2; ?></label>
-                    <input type="text" class="form-control" name="passwordRecoveryAnswer2" required>
-                </div>
-
-                <input type="hidden" id="emailAddress" name="emailAddress" value="<?php echo $email_address; ?>">
-
-                <input type="submit" value="Submit" class="btn btn-primary" name="submit">
-
-            </form>
-            
+            <?php echo $message; ?>
 
           </div>
       </div>
