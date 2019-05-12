@@ -147,13 +147,13 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Hours (Day):</label>
-                            <input type="number" class="form-control" value="<?php echo $hours_day; ?>"  name="hours_day">
+                            <input type="number" step=".1" min="0" class="form-control" value="<?php echo $hours_day; ?>"  name="hours_day">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Hours (Night):</label>
-                            <input type="number" class="form-control" value="<?php echo $hours_night; ?>" name="hours_night">
+                            <input type="number" step=".1" min="0" class="form-control" value="<?php echo $hours_night; ?>" name="hours_night">
                         </div>
                     </div>
                 </div>
@@ -180,13 +180,13 @@ while($row = mysqli_fetch_assoc($result)){
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Instrument:</label>
-                            <input type="number" class="form-control" value="<?php echo $instrument; ?>" name="hours_instrument">
+                            <input type="number" step=".1" min="0" class="form-control" value="<?php echo $instrument; ?>" name="hours_instrument">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Simulated Instrument:</label>
-                            <input type="number" class="form-control" value="<?php echo $sim_instrument; ?>" name="hours_sim_instrument">
+                            <input type="number" step=".1" min="0" class="form-control" value="<?php echo $sim_instrument; ?>" name="hours_sim_instrument">
                         </div>
                     </div>
                 </div>
