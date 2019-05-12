@@ -45,8 +45,8 @@ if(isset($_POST['submit'])){
         include '../includes/connection.php';
 
         //SQL statement to insert data into the "entries" table of the DB
-        $sql = "INSERT INTO entries (user_id, date, aircraft, destination, hours_day, hours_night, hours_instrument, hours_sim_instrument, time_type, notes) 
-                VALUES ('$user_id', '$date', '$aircraft', '$destination', '$hours_day', '$hours_night', '$hours_instrument',
+        $sql = "INSERT INTO entries (user_id, date, aircraft, destination, hours_day, hours_night, landings_day, landings_night, hours_instrument, hours_sim_instrument, time_type, notes) 
+                VALUES ('$user_id', '$date', '$aircraft', '$destination', '$hours_day', '$hours_night', '$landings_day', '$landings_night', '$hours_instrument',
                         '$hours_sim_instrument', '$time_type', '$notes')";
 
         //Insert the data into the "entries" table of the database
