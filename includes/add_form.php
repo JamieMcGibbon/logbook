@@ -49,13 +49,13 @@
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Hours (Day):</label>
-                                <input type="number" class="form-control" name="hours_day">
+                                <input type="number" step=".1" min="0" class="form-control" name="hours_day">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Hours (Night):</label>
-                                <input type="number" class="form-control" name="hours_night">
+                                <input type="number" step=".1" min="0" class="form-control" name="hours_night">
                             </div>
                         </div>
                     </div>
@@ -82,13 +82,13 @@
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Instrument:</label>
-                                <input type="number" class="form-control" name="hours_instrument">
+                                <input type="number" step=".1" min="0" class="form-control" name="hours_instrument">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                             <div class="form-group">
                                 <label>Simulated Instrument:</label>
-                                <input type="number" class="form-control" name="hours_sim_instrument">
+                                <input type="number" step=".1" min="0" class="form-control" name="hours_sim_instrument">
                             </div>
                         </div>
                     </div>
