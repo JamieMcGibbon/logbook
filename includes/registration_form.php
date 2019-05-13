@@ -23,6 +23,8 @@
 
             <h2>Register</h2>
 
+            <p>In order to register for a free logbook account, please fill out the form below.
+
              <?php 
                 if($errorMessage){
                     echo "<div class='alert alert-danger'>".$errorMessage."</div>"; 
