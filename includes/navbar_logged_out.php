@@ -21,7 +21,7 @@
           <!-- Right Side of Navbar -->
           <ul class="navbar-nav my-2 my-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./register.php">Register</a>
+              <a class="nav-link" href="./register/">Register</a>
             </li>
             <li>
               <a class="nav-link" href="./login.php">Login</a>
