@@ -4,11 +4,11 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Location: ./dashboard/index.php');
+        header('Location: ../dashboard/index.php');
     }  
 
     //Include PHP MySQL DB connection file
-    include './includes/connection.php';
+    include '../includes/connection.php';
 
     //Error message variable
     $errorMessage = "";
@@ -40,7 +40,7 @@
                 $errorMessage = "The email address you entered is already in use. If you already have an account, please <a href='./login.php'>login here</a>.";
 
                 //Show registration form with error message
-                include './includes/registration_form.php';
+                include '../includes/registration_form.php';
 
             }
             else{
@@ -55,21 +55,21 @@
                         $errorMessage = "";
                     } else {
                         $errorMessage = "Error: " . $sql . "<br>" . mysqli_error($conn);
-                        include './includes/registration_form.php';
+                        include '../includes/registration_form.php';
                     }
                     
                     mysqli_close($conn);
                     //Create and set session variable (TO-DO) to log user in                  
 
                     //Send the user to the log in page
-                    header('Location: ./login.php');
+                    header('Location: ../login.php');
 
                 }
                 else{
                     
                     //Show error message and registration form
                     $errorMessage = "Please ensure that your passwords match and try again.";
-                    include './includes/registration_form.php';
+                    include '../includes/registration_form.php';
                 }
 
 
@@ -83,13 +83,13 @@
             $errorMessage = "Please check that all form fields have been filled out and try again!";
 
             //Show registration form
-            include './includes/registration_form.php';  
+            include '../includes/registration_form.php';  
 
         }
 
     }
     else{
         //Show registration form
-        include './includes/registration_form.php';
+        include '../includes/registration_form.php';
     }
 ?>
