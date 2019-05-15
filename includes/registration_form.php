@@ -14,6 +14,7 @@
 <body>
 
 <!-- Navbar -->
+<?php $root = "../"; ?>
 <?php include '../includes/navbar_logged_out.php'; ?>
 <!-- End Navbar -->
 
