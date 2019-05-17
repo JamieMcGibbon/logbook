@@ -15,7 +15,7 @@ else{
     include '../includes/connection.php';
 
     //Store user's recovery email address in the "$email_address" variable
-    $email_address = $_POST['recoveryEmail'];
+    $email_address = htmlentities($_POST['recoveryEmail']);
 
     //Query the DB to see if an account with the user-entered recovery email address exists
     $sql = "SELECT * FROM users WHERE email = '$email_address'";
